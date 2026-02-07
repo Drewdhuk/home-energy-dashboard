@@ -2,7 +2,6 @@
   "name": "Home Energy Dashboard",
   "content_in_root": true,
   "render_readme": true,
-  "zip_release": true,
-  "filename": "home-energy-dashboard-card.js",
-  "homeassistant": "2024.6.0"
+  "zip_release": false,
+  "filename": "home-energy-dashboard-card.js"
 }
