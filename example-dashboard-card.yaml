@@ -1,0 +1,43 @@
+# Home Energy Dashboard — sample config (copy/paste)
+type: custom:home-energy-dashboard-card
+title: Home Energy Dashboard
+refresh_seconds: 60
+range: day
+show_range_tabs: true
+show_export: true
+max_points: 220
+
+entities:
+  # Solar
+  solar_power: sensor.my_home_solar_power
+
+  # Grid (signed W preferred; +import, -export)
+  grid_power: sensor.myenergi_my_home_power_grid
+
+  # Battery
+  battery_power: sensor.battery_power
+  battery_soc: sensor.percentage_charged
+
+  # Home load
+  home_power: sensor.load_power
+
+  # Heat pump
+  heatpump_power: sensor.my_home_device_0_arotherm_plus_current_power
+
+  # Outside temperature overlay
+  outdoor_temp: sensor.my_home_outdoor_temperature
+
+  # EV charger
+  ev_power: sensor.myenergi_zappi_22161822_power_ct_internal_load
+
+  # Octopus / tariff shading + dispatch chip
+  tariff_state: sensor.nz_tariff_state
+  dispatch_active: binary_sensor.octopus_energy_00000000_0009_4000_8020_000000049d45_intelligent_dispatching
+
+  # Octopus rates (confirmed ✅)
+  import_rate: sensor.octopus_energy_electricity_15p0138047_2380001118334_current_rate
+  export_rate: sensor.octopus_energy_electricity_15p0138047_2394300431811_export_current_rate
+
+options:
+  invert_grid: false
+  invert_battery: false
